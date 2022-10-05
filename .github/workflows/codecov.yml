@@ -11,12 +11,11 @@ jobs:
       with:
         channel: 'stable' 
     - run: flutter pub get
-    - run: flutter pub upgrade
+    # - run: flutter analyze
     - run: flutter test
     - run: flutter test --coverage
-    - run: flutter build apk
-    # - run: flutter analyze
     - uses: codecov/codecov-action@v1.0.2
+    - run: flutter build apk
       with:
         token: ${{secrets.CODECOV_TOKEN}}
         file: ./coverage/lcov.info
