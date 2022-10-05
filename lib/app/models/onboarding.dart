@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class Onboarding {
+import 'package:equatable/equatable.dart';
+
+class Onboarding extends Equatable {
   final String title;
   final String description;
   const Onboarding({
@@ -37,9 +39,9 @@ class Onboarding {
   factory Onboarding.fromJson(String source) =>
       Onboarding.fromMap(json.decode(source) as Map<String, dynamic>);
 
-  // @override
-  // bool get stringify => true;
+  @override
+  bool get stringify => true;
 
-  // @override
-  // List<Object> get props => [title, description];
+  @override
+  List<Object> get props => [title, description];
 }

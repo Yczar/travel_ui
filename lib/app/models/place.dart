@@ -1,7 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-class Place {
+import 'package:equatable/equatable.dart';
+
+class Place extends Equatable {
   final String title;
   final String description;
   final String image;
@@ -56,19 +57,19 @@ class Place {
   factory Place.fromJson(String source) =>
       Place.fromMap(json.decode(source) as Map<String, dynamic>);
 
-  // @override
-  // bool get stringify => true;
+  @override
+  bool get stringify => true;
 
-  // @override
-  // List<Object> get props {
-  //   return [
-  //     title,
-  //     description,
-  //     image,
-  //     location,
-  //     price,
-  //   ];
-  // }
+  @override
+  List<Object> get props {
+    return [
+      title,
+      description,
+      image,
+      location,
+      price,
+    ];
+  }
 
   static List<Place> get places => [
         const Place(
