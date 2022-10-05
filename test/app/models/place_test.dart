@@ -23,13 +23,12 @@ void main() {
         final place = Place.fromMap(placeMap);
         expect(place.toMap(), placeMap);
       });
-      // Todo: Figure a work around for this
       test(
-          'two different instances of $Place with the same values should return false if compared',
+          'two different instances of $Place with the same values should return true if compared',
           () {
         final place1 = Place.fromMap(placeMap);
         final place2 = Place.fromMap(placeMap);
-        expect(place1 == place2, false);
+        expect(place1 == place2, true);
       });
     });
   });
