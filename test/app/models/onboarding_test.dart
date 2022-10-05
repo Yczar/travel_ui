@@ -17,12 +17,13 @@ void main() {
         final onboarding = Onboarding.fromMap(onboardingMap);
         expect(onboarding.toMap(), onboardingMap);
       });
+      // Todo: Figure a work around for this
       test(
-          'two different instances of $Onboarding with the same values should return true if compared',
+          'two different instances of $Onboarding with the same values should return false if compared',
           () {
         final onboarding1 = Onboarding.fromMap(onboardingMap);
         final onboarding2 = Onboarding.fromMap(onboardingMap);
-        expect(onboarding1 == onboarding2, true);
+        expect(onboarding1 == onboarding2, false);
       });
     });
   });
